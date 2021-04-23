@@ -51,14 +51,16 @@ form.addEventListener('submit', function(e) {
    // let JS know we we're submitting a form, should treat it as such
    const formData = new FormData(e.target);
    const formObject = Object.fromEntries(formData);
+   // // debug
+   // console.log(formObject);
    // put the result in the div
    formResult.classList.remove('is-inactive');
    formResult.querySelector('pre').innerText += '\n' + JSON.stringify(formObject, null, '\t');
    count += 1;
    formCount.innerText = count;
-   // reset the entire form
+   // // reset the entire form
    form.reset();
-   // blurs any inputs currently in focus on the page
+   // // blurs any inputs currently in focus on the page
    if ('activeElement' in document) {
       document.activeElement.blur();
    }
